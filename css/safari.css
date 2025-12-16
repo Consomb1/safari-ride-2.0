@@ -1,0 +1,361 @@
+/* =========================================================
+   SAFARI RIDE — FINAL CONSOLIDATED CSS
+   ========================================================= */
+
+/* ---------------------------
+   RESET & VARIABLES
+---------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #d4652f;
+  --primary-dark: #b8531f;
+  --secondary: #2c3e50; /* Dark color for footer & navbar */
+  --light-bg: #f8f6f1;
+  --border: #e0dcd4;
+  --text-dark: #2c3e50;
+  --text-light: #666;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  color: var(--text-dark);
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* ---------------------------
+   TYPOGRAPHY
+---------------------------- */
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+p {
+  color: var(--text-light);
+}
+
+.lead {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------------------------
+   NAVBAR
+---------------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--secondary); /* match footer color */
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.download-btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.55rem 1.3rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#mobile-menu-btn {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+/* ---------------------------
+   HERO
+---------------------------- */
+.hero {
+  max-width: 1400px;
+  margin: auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center; /* vertically align text with image */
+}
+
+.hero-right img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Make hero image larger on big screens */
+@media (min-width: 1200px) {
+  .hero-right img {
+    max-width: 500px; /* increase size */
+  }
+}
+
+/* ---------------------------
+   SERVICES GRID
+---------------------------- */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
+  list-style: none;
+  padding: 0;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.75rem;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 0.75rem;
+  object-fit: contain;
+}
+
+/* ---------------------------
+   GRID FIX — ICONS & BOXES
+---------------------------- */
+.feature-grid,
+.about-lower,
+.contact-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.8rem;
+  max-width: 1400px;
+  margin: auto;
+  padding: 3rem 2rem;
+}
+
+.feature,
+.contact-icon,
+.lower-box {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.75rem;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease;
+}
+
+.feature:hover,
+.contact-icon:hover,
+.lower-box:hover {
+  transform: translateY(-5px);
+}
+
+.feature img,
+.contact-icon img,
+.lower-box img {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 0.75rem;
+  object-fit: contain;
+}
+
+.contact-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+/* ---------------------------
+   FOOTER
+---------------------------- */
+.site-footer {
+  background: var(--secondary);
+  color: #fff;
+  height: 42px;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-logo {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.footer-brand {
+  font-weight: 700;
+}
+
+.store-badges {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.store-badges img {
+  height: 24px;
+}
+
+.social {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.social a {
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social img {
+  width: 11px;
+  height: 11px;
+  filter: invert(1);
+}
+
+.footer-bottom {
+  font-size: 0.72rem;
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+/* ---------------------------
+   RESPONSIVE
+---------------------------- */
+@media (max-width: 1200px) {
+  .hero-right img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  #mobile-menu-btn {
+    display: block;
+  }
+
+  .site-footer {
+    height: auto;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.4rem;
+  }
+
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right img {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   LOGO SIZE FIX
+   ========================= */
+.logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.footer-logo {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
