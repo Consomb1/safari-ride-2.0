@@ -1,5 +1,5 @@
 /* =========================================================
-   SAFARI RIDE — IMPROVED RESPONSIVE CSS
+   SAFARI RIDE — FINAL RESPONSIVE GREEN THEME CSS
    ========================================================= */
 
 /* ---------------------------
@@ -12,12 +12,12 @@
 }
 
 :root {
-  --primary: #d4652f;
-  --primary-dark: #b8531f;
-  --secondary: #2c3e50; /* Dark color for navbar & footer */
+  --primary: #1f7a3f;        /* Safari Green */
+  --primary-dark: #155c30;
+  --secondary: #1f7a3f;      /* Navbar & Footer */
   --light-bg: #f8f6f1;
   --border: #e0dcd4;
-  --text-dark: #2c3e50;
+  --text-dark: #1e2b22;
   --text-light: #666;
 }
 
@@ -30,6 +30,7 @@ body {
   color: var(--text-dark);
   background: #fff;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ---------------------------
@@ -105,7 +106,7 @@ p {
 
 .nav-links a.active,
 .nav-links a:hover {
-  color: var(--primary);
+  color: #dff3e6;
 }
 
 .nav-right {
@@ -115,8 +116,8 @@ p {
 }
 
 .download-btn {
-  background: var(--primary);
-  color: #fff;
+  background: #fff;
+  color: var(--primary);
   padding: 0.55rem 1.3rem;
   border-radius: 6px;
   font-weight: 600;
@@ -147,8 +148,8 @@ p {
 
 .hero-right img {
   width: 100%;
-  max-width: 500px;
-  border-radius: 16px;
+  max-width: 520px;
+  border-radius: 18px;
   object-fit: cover;
 }
 
@@ -157,41 +158,41 @@ p {
 ---------------------------- */
 .service-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
   list-style: none;
   padding: 0;
 }
 
 .service-card {
   background: #fff;
-  border-radius: 14px;
-  padding: 1.75rem;
+  border-radius: 16px;
+  padding: 2rem;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
   transition: transform 0.25s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .service-card img {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 0.75rem;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 1rem;
   object-fit: contain;
 }
 
 /* ---------------------------
-   GRID FIX — ICONS & BOXES
+   GRID — ICONS & BOXES
 ---------------------------- */
 .feature-grid,
 .about-lower,
 .contact-icons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.8rem;
+  gap: 2rem;
   max-width: 1400px;
   margin: auto;
   padding: 3rem 2rem;
@@ -201,28 +202,29 @@ p {
 .contact-icon,
 .lower-box {
   background: #fff;
-  border-radius: 14px;
-  padding: 1.75rem;
+  border-radius: 16px;
+  padding: 2rem;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
   transition: transform 0.25s ease;
 }
 
 .feature:hover,
 .contact-icon:hover,
 .lower-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .feature img,
 .contact-icon img,
 .lower-box img {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   margin-bottom: 0.75rem;
   object-fit: contain;
 }
 
+/* CONTACT ICON TEXT FIX */
 .contact-icon {
   display: flex;
   flex-direction: column;
@@ -232,13 +234,20 @@ p {
   color: var(--text-dark);
 }
 
+.contact-icon span {
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  font-size: 0.95rem;
+}
+
 /* ---------------------------
    FOOTER
 ---------------------------- */
 .site-footer {
   background: var(--secondary);
   color: #fff;
-  height: 42px;
+  height: 44px;
   padding: 0 1.25rem;
   display: flex;
   align-items: center;
@@ -278,7 +287,7 @@ p {
 .social a {
   width: 20px;
   height: 20px;
-  background: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.25);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -293,28 +302,26 @@ p {
 
 .footer-bottom {
   font-size: 0.72rem;
-  opacity: 0.75;
+  opacity: 0.8;
   white-space: nowrap;
 }
 
 /* ---------------------------
    RESPONSIVE
 ---------------------------- */
-@media (max-width: 1200px) {
-  .hero-right img {
-    max-width: 400px;
-  }
-}
-
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
   }
+
+  .hero-right img {
+    margin: auto;
+  }
 }
 
 @media (max-width: 768px) {
-  /* Mobile nav */
+  /* MOBILE NAV */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -322,12 +329,11 @@ p {
     position: absolute;
     top: 64px;
     right: 0;
-    width: 200px;
+    width: 220px;
     padding: 1rem;
-    border-radius: 0 0 0 8px;
     gap: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    z-index: 999;
+    border-radius: 0 0 0 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
   }
 
   .nav-links.show {
@@ -338,69 +344,65 @@ p {
     display: block;
   }
 
-  .service-list {
+  /* CONTACT ICONS STACK */
+  .contact-icons {
     grid-template-columns: 1fr;
   }
 
-  .hero-right img {
-    max-width: 100%;
-    margin: auto;
-  }
-
+  /* FOOTER STACK */
   .site-footer {
     flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem;
     height: auto;
+    gap: 0.4rem;
+    padding: 0.5rem;
   }
 }
 
-/* =========================
-   LOGO SIZE FIX
-========================= */
-.logo {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+@media (max-width: 480px) {
+  .contact-icon span {
+    font-size: 0.9rem;
+  }
 }
 
-.footer-logo {
-  width: 26px;
-  height: 26px;
-  object-fit: contain;
-}
 /* ---------------------------
-   CONTACT PAGE MOBILE FIX
+   LOGO SAFETY
 ---------------------------- */
-@media (max-width: 768px) {
-  /* Make contact section stack vertically */
-  .contact-section .hero-left {
-    width: 100%;
-    padding: 0 1rem;
-  }
+.logo,
+.footer-logo {
+  max-width: 32px;
+  max-height: 32px;
+  object-fit: contain;
+}
+/* =========================================================
+   YELLOW CTA OVERRIDES — SAFE & ISOLATED
+   (DO NOT MOVE, DO NOT EDIT)
+========================================================= */
 
-  /* Contact icons adapt to screen */
-  .contact-icons {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    justify-items: center;
-  }
+/* 1. NAVBAR DOWNLOAD BUTTON */
+.navbar .download-btn {
+  background: #f4c430;
+  color: #1e2b22;
+  font-weight: 700;
+}
 
-  /* Contact form inputs and textarea full width */
-  .contact-form form input,
-  .contact-form form textarea {
-    width: 100%;
-    max-width: 100%;
-  }
+.navbar .download-btn:hover {
+  background: #d9aa1e;
+}
 
-  /* Contact form button full width */
-  .contact-form form button {
-    width: 100%;
-  }
+/* 2. HOME PAGE CTA BUTTONS ONLY */
+.hero-ctas a {
+  background: #f4c430;
+  color: #1e2b22;
+  font-weight: 700;
+  padding: 0.75rem 1.4rem;
+  border-radius: 10px;
+  text-decoration: none;
+}
 
-  /* Ensure overall section doesn't overflow */
-  .contact-section {
-    padding: 2rem 1rem;
-    overflow-x: hidden;
-  }
+.hero-ctas a:hover {
+  background: #d9aa1e;
+}
+/* EXTRA BREATHING SPACE BELOW HOME CTA BUTTONS */
+.hero-ctas {
+  margin-bottom: 2rem;
 }
