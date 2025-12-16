@@ -1,5 +1,5 @@
 /* =========================================================
-   SAFARI RIDE — FINAL CONSOLIDATED CSS
+   SAFARI RIDE — IMPROVED RESPONSIVE CSS
    ========================================================= */
 
 /* ---------------------------
@@ -14,7 +14,7 @@
 :root {
   --primary: #d4652f;
   --primary-dark: #b8531f;
-  --secondary: #2c3e50; /* Dark color for footer & navbar */
+  --secondary: #2c3e50; /* Dark color for navbar & footer */
   --light-bg: #f8f6f1;
   --border: #e0dcd4;
   --text-dark: #2c3e50;
@@ -66,8 +66,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--secondary); /* match footer color */
-  border-bottom: 1px solid var(--border);
+  background: var(--secondary);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -130,6 +129,7 @@ p {
   background: none;
   border: none;
   color: #fff;
+  cursor: pointer;
 }
 
 /* ---------------------------
@@ -142,22 +142,14 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: center; /* vertically align text with image */
+  align-items: center;
 }
 
 .hero-right img {
-  max-width: 100%;
   width: 100%;
-  height: auto;
+  max-width: 500px;
   border-radius: 16px;
   object-fit: cover;
-}
-
-/* Make hero image larger on big screens */
-@media (min-width: 1200px) {
-  .hero-right img {
-    max-width: 500px; /* increase size */
-  }
 }
 
 /* ---------------------------
@@ -317,23 +309,33 @@ p {
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
+    text-align: center;
   }
 }
 
 @media (max-width: 768px) {
+  /* Mobile nav */
   .nav-links {
     display: none;
+    flex-direction: column;
+    background: var(--secondary);
+    position: absolute;
+    top: 64px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0 0 0 8px;
+    gap: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
   }
 
   #mobile-menu-btn {
     display: block;
-  }
-
-  .site-footer {
-    height: auto;
-    flex-direction: column;
-    gap: 0.35rem;
-    padding: 0.4rem;
   }
 
   .service-list {
@@ -342,12 +344,20 @@ p {
 
   .hero-right img {
     max-width: 100%;
+    margin: auto;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    height: auto;
   }
 }
 
 /* =========================
    LOGO SIZE FIX
-   ========================= */
+========================= */
 .logo {
   width: 32px;
   height: 32px;
@@ -358,4 +368,39 @@ p {
   width: 26px;
   height: 26px;
   object-fit: contain;
+}
+/* ---------------------------
+   CONTACT PAGE MOBILE FIX
+---------------------------- */
+@media (max-width: 768px) {
+  /* Make contact section stack vertically */
+  .contact-section .hero-left {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  /* Contact icons adapt to screen */
+  .contact-icons {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-items: center;
+  }
+
+  /* Contact form inputs and textarea full width */
+  .contact-form form input,
+  .contact-form form textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Contact form button full width */
+  .contact-form form button {
+    width: 100%;
+  }
+
+  /* Ensure overall section doesn't overflow */
+  .contact-section {
+    padding: 2rem 1rem;
+    overflow-x: hidden;
+  }
 }

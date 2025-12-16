@@ -1,28 +1,16 @@
-console.log("Safari Ride site loaded successfully!");
+// ================================
+// MOBILE MENU TOGGLE
+// ================================
+const menuBtn = document.getElementById('mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
 
-document.addEventListener('DOMContentLoaded', function() {
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const navLinks = document.querySelector('.nav-links');
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
 
-  if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', function() {
-      navLinks.classList.toggle('active');
-    });
-
-    document.addEventListener('click', function(event) {
-      const isClickOnMenu = navLinks.contains(event.target);
-      const isClickOnBtn = mobileMenuBtn.contains(event.target);
-
-      if (!isClickOnMenu && !isClickOnBtn && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-      }
-    });
-
-    const navItems = navLinks.querySelectorAll('a');
-    navItems.forEach(item => {
-      item.addEventListener('click', function() {
-        navLinks.classList.remove('active');
-      });
-    });
-  }
+// Close mobile menu when clicking any link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+  });
 });
