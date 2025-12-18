@@ -406,3 +406,13 @@ p {
 .hero-ctas {
   margin-bottom: 2rem;
 }
+/* ================================
+   CIRCULAR LOGO
+================================ */
+.logo,
+.footer-logo {
+  width: 42px;              /* adjust if needed */
+  height: 42px;
+  object-fit: cover;        /* prevents stretching */
+  border-radius: 50%;       /* makes it circular */
+}

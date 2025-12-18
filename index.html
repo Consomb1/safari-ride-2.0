@@ -23,7 +23,7 @@
   </ul>
 
   <div class="nav-right">
-    <a class="download-btn" href="https://play.google.com" target="_blank">Download App</a>
+    <a href="#" class="download-btn coming-soon">Download App</a>
     <button id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
   </div>
 </nav>
@@ -34,11 +34,11 @@
     <h1>Safari Ride : Your Ride, Your Way.</h1>
     <p class="lead">
       From quick taxi rides and fast doorstep deliveries to curated travel
-      experiences — move smoothly, safely, and in style.
+      experiences.Move smoothly, safely, and in style.
     </p>
 
     <div class="hero-ctas">
-      <a class="btn-primary" href="https://play.google.com" target="_blank">Get the App</a>
+      <a href="#" class="btn-primary coming-soon">Get the App</a>
       <a class="btn-ghost" href="/services">Our Services</a>
     </div>
 
@@ -96,7 +96,7 @@
   </div>
 </section>
 
-<!-- FOOTER (IDENTICAL STRUCTURE TO CONTACT PAGE) -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-left">
     <img src="/images/logos.png" alt="Safari Ride logo" class="footer-logo">
@@ -104,10 +104,10 @@
   </div>
 
   <div class="store-badges">
-    <a href="https://apps.apple.com" target="_blank">
+    <a href="#" class="coming-soon">
       <img src="/images/appstore.jpg" alt="App Store">
     </a>
-    <a href="https://play.google.com" target="_blank">
+    <a href="#" class="coming-soon">
       <img src="/images/playstore.jpg" alt="Google Play">
     </a>
   </div>
@@ -127,5 +127,16 @@
 </footer>
 
 <script src="/js/safari.js"></script>
+
+<!-- COMING SOON HANDLER -->
+<script>
+  document.querySelectorAll('.coming-soon').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      alert('Safari Ride app is coming soon!');
+    });
+  });
+</script>
+
 </body>
 </html>

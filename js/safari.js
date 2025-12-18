@@ -1,16 +1,30 @@
 // ================================
-// MOBILE MENU TOGGLE
+// MOBILE MENU TOGGLE (SAFE + IMPROVED)
 // ================================
-const menuBtn = document.getElementById('mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
 
-menuBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
+  // Safety check
+  if (!menuBtn || !navLinks) return;
 
-// Close mobile menu when clicking any link
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('show');
+  // Toggle menu
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle('show');
+  });
+
+  // Close menu when clicking a link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+      navLinks.classList.remove('show');
+    }
   });
 });
